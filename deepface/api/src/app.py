@@ -12,8 +12,7 @@ logger = Logger()
 
 def create_app():
     app = Flask(__name__)
-    # CORS(app)
-    CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
+    CORS(app)
     app.register_blueprint(blueprint)
     logger.info(f"Welcome to DeepFace API v{DeepFace.__version__}!")
     return app
